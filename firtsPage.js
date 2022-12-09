@@ -1,6 +1,6 @@
 const app = document.querySelector('.app');
 
-function createFirstPage() {
+function renderBlocksFirstPage() {
     const container = document.createElement('div');
     container.classList = 'first-page__container';
 
@@ -36,4 +36,5 @@ function createFirstPage() {
     container.appendChild(button);
 };
 
-window.application.blocks['FirstPage'] = createFirstPage;
+
+window.application.blocks['FirstPage'] = renderBlocksFirstPage;
