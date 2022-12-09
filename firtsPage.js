@@ -36,4 +36,5 @@ function renderBlocksFirstPage() {
     container.appendChild(button);
 };
 
+
 window.application.blocks['FirstPage'] = renderBlocksFirstPage;
