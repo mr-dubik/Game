@@ -86,6 +86,18 @@ body {
     justify-content: center;
 }
 
+.first-page__container_numbers input[type=radio] {
+    display: none;
+}
+
+.first-page__container_numbers input[type=radio]:checked+label {
+    color: #ce1717;
+}
+.first-page__container_numbers label {
+    cursor: pointer;
+}
+
+
 @font-face {
     font-family: StratosSkyeng;
     src: url(fonts/stratosskyeng-regular.otf);
