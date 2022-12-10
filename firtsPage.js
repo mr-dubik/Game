@@ -13,15 +13,42 @@ function renderBlocksFirstPage() {
 
     const numberOne = document.createElement('div');
     numberOne.classList = 'first-page__numbers';
-    numberOne.textContent =  '1';
+    const easy = document.createElement('input');
+    easy.type = 'radio';
+    easy.name = 'radio';
+    easy.value = '1';
+    easy.id = 'radio-1';
+    easy.classList = 'radio';
+    const labelOne = document.createElement('label');
+    labelOne.textContent = '1';
+    labelOne.htmlFor = 'radio-1';
+    // numberOne.textContent =  '1';
 
     const numbersTwo = document.createElement('div');
     numbersTwo.classList = 'first-page__numbers';
-    numbersTwo.textContent =  '2';
+    const medium = document.createElement('input');
+    medium.type = 'radio';
+    medium.name = 'radio';
+    medium.value = '2';
+    medium.id = 'radio-2';
+    medium.classList = 'radio';
+    const labelTwo = document.createElement('label');
+    labelTwo.textContent = '2';
+    labelTwo.htmlFor = 'radio-2';
+    // numbersTwo.textContent =  '2';
 
     const numberThree = document.createElement('div');
     numberThree.classList= 'first-page__numbers';
-    numberThree.textContent =  '3';
+    const hard = document.createElement('input');
+    hard.type = 'radio';
+    hard.name = 'radio';
+    hard.value = '3';
+    hard.id = 'radio-3';
+    hard.classList = 'radio';
+    const labelThree = document.createElement('label');
+    labelThree.textContent = '3';
+    labelThree.htmlFor = 'radio-3';
+    // numberThree.textContent =  '3';
 
     const button = document.createElement('button');
     button.classList = 'first-page__button';
@@ -31,10 +58,33 @@ function renderBlocksFirstPage() {
     container.appendChild(title);
     container.appendChild(containerNumbers);
     containerNumbers.appendChild(numberOne);
+    numberOne.appendChild(easy);
+    numberOne.appendChild(labelOne);
     containerNumbers.appendChild(numbersTwo);
+    numbersTwo.appendChild(medium);
+    numbersTwo.appendChild(labelTwo);
     containerNumbers.appendChild(numberThree);
+    numberThree.appendChild(hard);
+    numberThree.appendChild(labelThree);
     container.appendChild(button);
+
+    const btn = document.querySelector('.first-page__button');
+    const radios = document.querySelectorAll('.radio');
+    const labels = document.querySelectorAll('label');
+
+    btn.addEventListener('click', () => {
+        if (radios[0].checked === true) {
+            alert('Вы выбрали легкий уровень сложности');
+        } else if (radios[1].checked === true) {
+            alert('Вы выбрали средний уровень сложности');
+        } else if (radios[2].checked === true) {
+            alert('Вы выбрали тяжелый уровень сложности');
+        } else {
+            alert('Выберите уровень сложности');
+        }
+    });
 };
 
 
 window.application.blocks['FirstPage'] = renderBlocksFirstPage;
+
