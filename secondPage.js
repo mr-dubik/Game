@@ -43,12 +43,9 @@ function renderBlocksSecondPageEasy() {
     head.appendChild(btnRestart);
     app.appendChild(cardDeck);
 
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
+    for (let i = 0; i < 6; i++) {
+        addCard();
+    }
 }
 
 window.application.blocks["SecondPageEasy"] = renderBlocksSecondPageEasy;
@@ -98,20 +95,9 @@ function renderBlocksSecondPageMedium() {
     head.appendChild(btnRestart);
     app.appendChild(cardDeck);
 
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
+    for (let i = 0; i < 18; i++) {
+        addCard();
+    }
 }
 
 window.application.blocks["SecondPageMedium"] = renderBlocksSecondPageMedium;
@@ -161,42 +147,9 @@ function renderBlocksSecondPageHard() {
     head.appendChild(btnRestart);
     app.appendChild(cardDeck);
 
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
-    addCard();
+    for (let i = 0; i < 36; i++) {
+        addCard();
+    }
 }
 
 window.application.blocks["SecondPageHard"] = renderBlocksSecondPageHard;
