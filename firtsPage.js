@@ -73,11 +73,14 @@ function renderBlocksFirstPage() {
 
     btn.addEventListener("click", () => {
         if (radios[0].checked === true) {
-            alert("Вы выбрали легкий уровень сложности");
+            window.application.blocks.SecondPageEasy();
+            window.application.difficulty["easyLevel"] = "easy";
         } else if (radios[1].checked === true) {
-            alert("Вы выбрали средний уровень сложности");
+            window.application.difficulty["mediumLevel"] = "medium";
+            window.application.blocks.SecondPageMedium();
         } else if (radios[2].checked === true) {
-            alert("Вы выбрали тяжелый уровень сложности");
+            window.application.difficulty["hardLevel"] = "hard";
+            window.application.blocks.SecondPageHard();
         } else {
             alert("Выберите уровень сложности");
         }
