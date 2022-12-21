@@ -1,3 +1,42 @@
+let cards = [
+    "./cardDeck/6_cross.jpg",
+    "./cardDeck/6_heart.jpg",
+    "./cardDeck/6_spades.jpg",
+    "./cardDeck/6_tambourine.jpg",
+    "./cardDeck/7_cross.jpg",
+    "./cardDeck/7_heart.jpg",
+    "./cardDeck/7_spades.jpg",
+    "./cardDeck/7_tambourine.jpg",
+    "./cardDeck/8_cross.jpg",
+    "./cardDeck/8_heart.jpg",
+    "./cardDeck/8_spades.jpg",
+    "./cardDeck/8_tambourine.jpg",
+    "./cardDeck/9_cross.jpg",
+    "./cardDeck/9_heart.jpg",
+    "./cardDeck/9_spades.jpg",
+    "./cardDeck/9_tambourine.jpg",
+    "./cardDeck/10_cross.jpg",
+    "./cardDeck/10_heart.jpg",
+    "./cardDeck/10_spades.jpg",
+    "./cardDeck/10_tambourine.jpg",
+    "./cardDeck/j_cross.jpg",
+    "./cardDeck/j_heart.jpg",
+    "./cardDeck/j_spades.jpg",
+    "./cardDeck/j_tambourine.jpg",
+    "./cardDeck/q_cross.jpg",
+    "./cardDeck/q_heart.jpg",
+    "./cardDeck/q_spades.jpg",
+    "./cardDeck/q_tambourine.jpg",
+    "./cardDeck/k_cross.jpg",
+    "./cardDeck/k_heart.jpg",
+    "./cardDeck/k_spades.jpg",
+    "./cardDeck/k_tambourine.jpg",
+    "./cardDeck/a_cross.jpg",
+    "./cardDeck/a_heart.jpg",
+    "./cardDeck/a_spades.jpg",
+    "./cardDeck/a_tambourine.jpg",
+];
+
 function renderBlocksSecondPageEasy() {
     const app = document.querySelector(".app");
     app.textContent = "";
@@ -27,11 +66,67 @@ function renderBlocksSecondPageEasy() {
     const cardDeck = document.createElement("div");
     cardDeck.classList = "second-page__card-deck";
 
-    function addCard() {
-        const cardShirt = document.createElement("img");
-        cardShirt.src = "./cardDeck/cardShirt.jpg";
+    function shuffle(array) {
+        let currentIndex = array.length,
+            randomIndex;
+        while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex],
+                array[currentIndex],
+            ];
+        }
 
-        cardDeck.appendChild(cardShirt);
+        return array;
+    }
+
+    shuffle(cards);
+
+    let cardsEasy = [];
+    function addCard() {
+        cardsEasy.push(cards[0], cards[1], cards[2]);
+    }
+
+    for (let i = 0; i < 2; i++) {
+        addCard();
+    }
+
+    shuffle(cardsEasy);
+
+    addCardTable();
+
+    function addCardTable() {
+        const card1 = document.createElement("img");
+        card1.src = cardsEasy[0];
+        card1.classList = "card1 click";
+
+        const card2 = document.createElement("img");
+        card2.src = cardsEasy[1];
+        card2.classList = "card2 click";
+
+        const card3 = document.createElement("img");
+        card3.src = cardsEasy[2];
+        card3.classList = "card3 click";
+
+        const card4 = document.createElement("img");
+        card4.src = cardsEasy[3];
+        card4.classList = "card4 click";
+
+        const card5 = document.createElement("img");
+        card5.src = cardsEasy[4];
+        card5.classList = "card5 click";
+
+        const card6 = document.createElement("img");
+        card6.src = cardsEasy[5];
+        card6.classList = "card6 click";
+
+        cardDeck.appendChild(card1);
+        cardDeck.appendChild(card2);
+        cardDeck.appendChild(card3);
+        cardDeck.appendChild(card4);
+        cardDeck.appendChild(card5);
+        cardDeck.appendChild(card6);
     }
 
     app.appendChild(head);
@@ -43,9 +138,36 @@ function renderBlocksSecondPageEasy() {
     head.appendChild(btnRestart);
     app.appendChild(cardDeck);
 
-    for (let i = 0; i < 6; i++) {
-        addCard();
+    setTimeout(cardsShirt, 5000);
+
+    function cardsShirt() {
+        let flipping1 = document.querySelector(".card1");
+        flipping1.src = "./cardDeck/cardShirt.jpg";
+
+        let flipping2 = document.querySelector(".card2");
+        flipping2.src = "./cardDeck/cardShirt.jpg";
+
+        let flipping3 = document.querySelector(".card3");
+        flipping3.src = "./cardDeck/cardShirt.jpg";
+
+        let flipping4 = document.querySelector(".card4");
+        flipping4.src = "./cardDeck/cardShirt.jpg";
+
+        let flipping5 = document.querySelector(".card5");
+        flipping5.src = "./cardDeck/cardShirt.jpg";
+
+        let flipping6 = document.querySelector(".card6");
+        flipping6.src = "./cardDeck/cardShirt.jpg";
     }
+
+    let clicks = document.querySelectorAll(".click");
+    clicks.addEventListener("click", function (event) {
+        event.target = console.log("object");
+    });
+
+    // clicks.onclick = function (event) {
+    //     event.target = console.log("object");
+    // };
 }
 
 window.application.blocks["SecondPageEasy"] = renderBlocksSecondPageEasy;
@@ -95,7 +217,7 @@ function renderBlocksSecondPageMedium() {
     head.appendChild(btnRestart);
     app.appendChild(cardDeck);
 
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < 12; i++) {
         addCard();
     }
 }
@@ -147,7 +269,7 @@ function renderBlocksSecondPageHard() {
     head.appendChild(btnRestart);
     app.appendChild(cardDeck);
 
-    for (let i = 0; i < 36; i++) {
+    for (let i = 0; i < 18; i++) {
         addCard();
     }
 }
