@@ -160,14 +160,92 @@ function renderBlocksSecondPageEasy() {
         flipping6.src = "./cardDeck/cardShirt.jpg";
     }
 
-    let clicks = document.querySelectorAll(".click");
-    clicks.addEventListener("click", function (event) {
-        event.target = console.log("object");
-    });
+    let choiceCards = [];
 
-    // clicks.onclick = function (event) {
-    //     event.target = console.log("object");
-    // };
+    let clicks = document.querySelector(".second-page__card-deck");
+    if (choiceCards.length < 2) {
+        clicks.addEventListener("click", function (event) {
+            if (event.target.classList[0] === "card1") {
+                event.target.src = cardsEasy[0];
+                choiceCards.push(event.target.src);
+                if (choiceCards.length < 2) {
+                    return;
+                } else {
+                    if (choiceCards[0] === choiceCards[1]) {
+                        alert("Вы победили");
+                    } else {
+                        alert("Вы проиграли");
+                    }
+                }
+            } else if (event.target.classList[0] === "card2") {
+                event.target.src = cardsEasy[1];
+                choiceCards.push(event.target.src);
+                if (choiceCards.length < 2) {
+                    return;
+                } else {
+                    if (choiceCards[0] === choiceCards[1]) {
+                        alert("Вы победили");
+                    } else {
+                        alert("Вы проиграли");
+                    }
+                }
+            } else if (event.target.classList[0] === "card3") {
+                event.target.src = cardsEasy[2];
+                choiceCards.push(event.target.src);
+                if (choiceCards.length < 2) {
+                    return;
+                } else {
+                    if (choiceCards[0] === choiceCards[1]) {
+                        alert("Вы победили");
+                    } else {
+                        alert("Вы проиграли");
+                    }
+                }
+            } else if (event.target.classList[0] === "card4") {
+                event.target.src = cardsEasy[3];
+                choiceCards.push(event.target.src);
+                if (choiceCards.length < 2) {
+                    return;
+                } else {
+                    if (choiceCards[0] === choiceCards[1]) {
+                        alert("Вы победили");
+                    } else {
+                        alert("Вы проиграли");
+                    }
+                }
+            } else if (event.target.classList[0] === "card5") {
+                event.target.src = cardsEasy[4];
+                choiceCards.push(event.target.src);
+                if (choiceCards.length < 2) {
+                    return;
+                } else {
+                    if (choiceCards[0] === choiceCards[1]) {
+                        alert("Вы победили");
+                    } else {
+                        alert("Вы проиграли");
+                    }
+                }
+            } else {
+                event.target.src = cardsEasy[5];
+                choiceCards.push(event.target.src);
+                if (choiceCards.length < 2) {
+                    return;
+                } else {
+                    if (choiceCards[0] === choiceCards[1]) {
+                        alert("Вы победили");
+                    } else {
+                        alert("Вы проиграли");
+                    }
+                }
+            }
+        });
+    } else {
+        if (choiceCards[0] === choiceCards[1]) {
+            alert("Вы победили");
+        } else {
+            alert("Вы проиграли");
+        }
+    }
 }
 
 window.application.blocks["SecondPageEasy"] = renderBlocksSecondPageEasy;
