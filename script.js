@@ -12,4 +12,5 @@ window.application = {
         }
     },
     timers: [],
+    cardDeck: [],
 };
