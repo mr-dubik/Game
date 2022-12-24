@@ -42,10 +42,10 @@ function renderBlocksSecondPageEasy() {
     app.textContent = "";
 
     const head = document.createElement("div");
-    head.classList = "second-page__head";
+    head.classList("second-page__head");
 
     const timeConteiner = document.createElement("div");
-    timeConteiner.classList = "second-page__head_time";
+    timeConteiner.classList("second-page__head_time");
 
     const timeMin = document.createElement("div");
     timeMin.classList = "second-page__head_time-min row1";
