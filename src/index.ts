@@ -1,23 +1,23 @@
-import Img from "./images/fox.jpg";
-import { add } from "./js/add";
-import "../style.scss";
-import * as _ from "lodash";
+// import Img from "./images/fox.jpg";
+// import { add } from "./js/add";
+// import "../style.scss";
+// import * as _ from "lodash";
 
-function component() {
-    const element = document.createElement("div");
+// function component() {
+//     const element = document.createElement("div");
 
-    element.classList.add("foo");
+//     element.classList.add("foo");
 
-    const myIcon = new Image();
-    myIcon.src = Img;
+//     const myIcon = new Image();
+//     myIcon.src = Img;
 
-    element.appendChild(myIcon);
+//     element.appendChild(myIcon);
 
-    _.capitalize();
+//     _.capitalize();
 
-    add(1, 2);
+//     add(1, 2);
 
-    return element;
-}
+//     return element;
+// }
 
-document.body.appendChild(component());
+// document.body.appendChild(component());
