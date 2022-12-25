@@ -23,7 +23,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -40,7 +40,7 @@ module.exports = {
     },
     plugins: [
         new CopyPlugin({
-            patterns: [{ from: "static", to: "static" }],
+            patterns: [{ from: "src/static", to: "static" }],
         }),
         new HtmlWebpackPlugin({
             template: "./index.html",
