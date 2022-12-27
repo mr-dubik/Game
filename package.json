@@ -4,8 +4,8 @@
     "description": "",
     "main": "firtsPage.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack serve --open",
+        "test": "jest",
+        "start": "webpack-dev-server",
         "format": "prettier --write ./",
         "lint:js": "eslint ./*.js",
         "lint:scss": "stylelint ./src/*.scss",
