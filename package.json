@@ -8,7 +8,7 @@
         "start": "webpack serve --open",
         "format": "prettier --write ./",
         "lint:js": "eslint ./*.js",
-        "lint:scss": "stylelint ./*.scss",
+        "lint:scss": "stylelint ./src/*.scss",
         "prepare": "husky install",
         "lint": "npm run lint:js && npm run lint:scss",
         "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
