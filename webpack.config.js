@@ -32,6 +32,15 @@ module.exports = {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: "asset/resource",
             },
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader",
+                exclude: /node_modules|\.d\.ts$/,
+            },
+            {
+                test: /\.d\.ts$/,
+                loader: "ignore-loader",
+            },
         ],
     },
     resolve: {

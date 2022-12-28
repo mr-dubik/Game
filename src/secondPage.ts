@@ -1,3 +1,5 @@
+import { iteratee } from "lodash";
+
 let cards = [
     "./cardDeck/6_cross.jpg",
     "./cardDeck/6_heart.jpg",
@@ -39,7 +41,7 @@ let cards = [
 
 function renderBlocksSecondPageEasy() {
     const app = document.querySelector(".app");
-    app.textContent = "";
+    app!.textContent = "";
 
     const head = document.createElement("div");
     head.classList.add("second-page__head");
@@ -129,43 +131,43 @@ function renderBlocksSecondPageEasy() {
         cardDeck.appendChild(card6);
     }
 
-    app.appendChild(head);
-    app.appendChild(head);
+    app!.appendChild(head);
+    app!.appendChild(head);
     head.appendChild(timeConteiner);
     timeConteiner.appendChild(timeMin);
     timeConteiner.appendChild(timeSek);
     timeConteiner.appendChild(timeGame);
     head.appendChild(btnRestart);
-    app.appendChild(cardDeck);
+    app!.appendChild(cardDeck);
 
     setTimeout(cardsShirt, 5000);
 
     function cardsShirt() {
         let flipping1 = document.querySelector(".card1");
-        flipping1.src = "./cardDeck/cardShirt.jpg";
+        flipping1!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping2 = document.querySelector(".card2");
-        flipping2.src = "./cardDeck/cardShirt.jpg";
+        flipping2!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping3 = document.querySelector(".card3");
-        flipping3.src = "./cardDeck/cardShirt.jpg";
+        flipping3!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping4 = document.querySelector(".card4");
-        flipping4.src = "./cardDeck/cardShirt.jpg";
+        flipping4!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping5 = document.querySelector(".card5");
-        flipping5.src = "./cardDeck/cardShirt.jpg";
+        flipping5!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping6 = document.querySelector(".card6");
-        flipping6.src = "./cardDeck/cardShirt.jpg";
+        flipping6!.src = "./cardDeck/cardShirt.jpg";
     }
 
     let choiceCards: any[] = [];
 
-    let clicks = document.querySelector(".second-page__card-deck");
+    let clicks: any = document.querySelector(".second-page__card-deck");
     if (choiceCards.length < 2) {
-        clicks.addEventListener("click", function (event) {
-            if (event.target.classList[0] === "card1") {
+        clicks!.addEventListener("click", function (event: any) {
+            if (event.target!.classList[0] === "card1") {
                 event.target.src = cardsEasy[0];
                 choiceCards.push(event.target.src);
                 if (choiceCards.length < 2) {
@@ -252,7 +254,7 @@ window.application.blocks["SecondPageEasy"] = renderBlocksSecondPageEasy;
 
 function renderBlocksSecondPageMedium() {
     const app = document.querySelector(".app");
-    app.textContent = "";
+    app!.textContent = "";
 
     const head = document.createElement("div");
     head.classList.add("second-page__head");
@@ -379,60 +381,60 @@ function renderBlocksSecondPageMedium() {
         cardDeck.appendChild(card12);
     }
 
-    app.appendChild(head);
-    app.appendChild(head);
+    app!.appendChild(head);
+    app!.appendChild(head);
     head.appendChild(timeConteiner);
     timeConteiner.appendChild(timeMin);
     timeConteiner.appendChild(timeSek);
     timeConteiner.appendChild(timeGame);
     head.appendChild(btnRestart);
-    app.appendChild(cardDeck);
+    app!.appendChild(cardDeck);
 
     setTimeout(cardsShirt, 5000);
 
     function cardsShirt() {
         let flipping1 = document.querySelector(".card1");
-        flipping1.src = "./cardDeck/cardShirt.jpg";
+        flipping1!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping2 = document.querySelector(".card2");
-        flipping2.src = "./cardDeck/cardShirt.jpg";
+        flipping2!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping3 = document.querySelector(".card3");
-        flipping3.src = "./cardDeck/cardShirt.jpg";
+        flipping3!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping4 = document.querySelector(".card4");
-        flipping4.src = "./cardDeck/cardShirt.jpg";
+        flipping4!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping5 = document.querySelector(".card5");
-        flipping5.src = "./cardDeck/cardShirt.jpg";
+        flipping5!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping6 = document.querySelector(".card6");
-        flipping6.src = "./cardDeck/cardShirt.jpg";
+        flipping6!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping7 = document.querySelector(".card7");
-        flipping7.src = "./cardDeck/cardShirt.jpg";
+        flipping7!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping8 = document.querySelector(".card8");
-        flipping8.src = "./cardDeck/cardShirt.jpg";
+        flipping8!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping9 = document.querySelector(".card9");
-        flipping9.src = "./cardDeck/cardShirt.jpg";
+        flipping9!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping10 = document.querySelector(".card10");
-        flipping10.src = "./cardDeck/cardShirt.jpg";
+        flipping10!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping11 = document.querySelector(".card11");
-        flipping11.src = "./cardDeck/cardShirt.jpg";
+        flipping11!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping12 = document.querySelector(".card12");
-        flipping12.src = "./cardDeck/cardShirt.jpg";
+        flipping12!.src = "./cardDeck/cardShirt.jpg";
     }
 
     let choiceCards: any[] = [];
 
-    let clicks = document.querySelector(".second-page__card-deck");
+    let clicks: any = document.querySelector(".second-page__card-deck");
     if (choiceCards.length < 2) {
-        clicks.addEventListener("click", function (event) {
+        clicks.addEventListener("click", function (event: any) {
             if (event.target.classList[0] === "card1") {
                 event.target.src = cardsEasy[0];
                 choiceCards.push(event.target.src);
@@ -592,7 +594,7 @@ window.application.blocks["SecondPageMedium"] = renderBlocksSecondPageMedium;
 
 function renderBlocksSecondPageHard() {
     const app = document.querySelector(".app");
-    app.textContent = "";
+    app!.textContent = "";
 
     const head = document.createElement("div");
     head.classList.add("second-page__head");
@@ -761,78 +763,78 @@ function renderBlocksSecondPageHard() {
         cardDeck.appendChild(card18);
     }
 
-    app.appendChild(head);
-    app.appendChild(head);
+    app!.appendChild(head);
+    app!.appendChild(head);
     head.appendChild(timeConteiner);
     timeConteiner.appendChild(timeMin);
     timeConteiner.appendChild(timeSek);
     timeConteiner.appendChild(timeGame);
     head.appendChild(btnRestart);
-    app.appendChild(cardDeck);
+    app!.appendChild(cardDeck);
 
     setTimeout(cardsShirt, 5000);
 
     function cardsShirt() {
         let flipping1 = document.querySelector(".card1");
-        flipping1.src = "./cardDeck/cardShirt.jpg";
+        flipping1!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping2 = document.querySelector(".card2");
-        flipping2.src = "./cardDeck/cardShirt.jpg";
+        flipping2!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping3 = document.querySelector(".card3");
-        flipping3.src = "./cardDeck/cardShirt.jpg";
+        flipping3!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping4 = document.querySelector(".card4");
-        flipping4.src = "./cardDeck/cardShirt.jpg";
+        flipping4!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping5 = document.querySelector(".card5");
-        flipping5.src = "./cardDeck/cardShirt.jpg";
+        flipping5!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping6 = document.querySelector(".card6");
-        flipping6.src = "./cardDeck/cardShirt.jpg";
+        flipping6!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping7 = document.querySelector(".card7");
-        flipping7.src = "./cardDeck/cardShirt.jpg";
+        flipping7!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping8 = document.querySelector(".card8");
-        flipping8.src = "./cardDeck/cardShirt.jpg";
+        flipping8!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping9 = document.querySelector(".card9");
-        flipping9.src = "./cardDeck/cardShirt.jpg";
+        flipping9!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping10 = document.querySelector(".card10");
-        flipping10.src = "./cardDeck/cardShirt.jpg";
+        flipping10!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping11 = document.querySelector(".card11");
-        flipping11.src = "./cardDeck/cardShirt.jpg";
+        flipping11!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping12 = document.querySelector(".card12");
-        flipping12.src = "./cardDeck/cardShirt.jpg";
+        flipping12!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping13 = document.querySelector(".card13");
-        flipping13.src = "./cardDeck/cardShirt.jpg";
+        flipping13!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping14 = document.querySelector(".card14");
-        flipping14.src = "./cardDeck/cardShirt.jpg";
+        flipping14!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping15 = document.querySelector(".card15");
-        flipping15.src = "./cardDeck/cardShirt.jpg";
+        flipping15!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping16 = document.querySelector(".card16");
-        flipping16.src = "./cardDeck/cardShirt.jpg";
+        flipping16!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping17 = document.querySelector(".card17");
-        flipping17.src = "./cardDeck/cardShirt.jpg";
+        flipping17!.src = "./cardDeck/cardShirt.jpg";
 
         let flipping18 = document.querySelector(".card18");
-        flipping18.src = "./cardDeck/cardShirt.jpg";
+        flipping18!.src = "./cardDeck/cardShirt.jpg";
     }
 
     let choiceCards: any[] = [];
 
-    let clicks = document.querySelector(".second-page__card-deck");
+    let clicks: any = document.querySelector(".second-page__card-deck");
     if (choiceCards.length < 2) {
-        clicks.addEventListener("click", function (event) {
+        clicks.addEventListener("click", function (event: any) {
             if (event.target.classList[0] === "card1") {
                 event.target.src = cardsEasy[0];
                 choiceCards.push(event.target.src);
