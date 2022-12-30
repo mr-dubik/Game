@@ -1,4 +1,4 @@
-import { iteratee } from "lodash";
+import * as _ from "lodash";
 
 let cards = [
     "./cardDeck/6_cross.jpg",
@@ -68,13 +68,13 @@ function renderBlocksSecondPageEasy() {
     const cardDeck = document.createElement("div");
     cardDeck.classList.add("second-page__card-deck");
 
-    function shuffle(array: any) {
+    function shuffle(array: []) {
         let currentIndex = array.length,
             randomIndex;
         while (currentIndex !== 0) {
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex--;
-            [array[currentIndex], array[randomIndex]] = [
+            [array[currentIndex], array[randomIndex]!] = [
                 array[randomIndex],
                 array[currentIndex],
             ];
@@ -85,7 +85,7 @@ function renderBlocksSecondPageEasy() {
 
     shuffle(cards);
 
-    let cardsEasy: any[] = [];
+    let cardsEasy: Element[] = [];
     function addCard() {
         cardsEasy.push(cards[0], cards[1], cards[2]);
     }
@@ -143,32 +143,40 @@ function renderBlocksSecondPageEasy() {
     setTimeout(cardsShirt, 5000);
 
     function cardsShirt() {
-        let flipping1 = document.querySelector(".card1");
+        let flipping1: HTMLImageElement | null =
+            document.querySelector(".card1");
         flipping1!.src = "./cardDeck/cardShirt.jpg";
 
-        let flipping2 = document.querySelector(".card2");
+        let flipping2: HTMLImageElement | null =
+            document.querySelector(".card2");
         flipping2!.src = "./cardDeck/cardShirt.jpg";
 
-        let flipping3 = document.querySelector(".card3");
+        let flipping3: HTMLImageElement | null =
+            document.querySelector(".card3");
         flipping3!.src = "./cardDeck/cardShirt.jpg";
 
-        let flipping4 = document.querySelector(".card4");
+        let flipping4: HTMLImageElement | null =
+            document.querySelector(".card4");
         flipping4!.src = "./cardDeck/cardShirt.jpg";
 
-        let flipping5 = document.querySelector(".card5");
+        let flipping5: HTMLImageElement | null =
+            document.querySelector(".card5");
         flipping5!.src = "./cardDeck/cardShirt.jpg";
 
-        let flipping6 = document.querySelector(".card6");
+        let flipping6: HTMLImageElement | null =
+            document.querySelector(".card6");
         flipping6!.src = "./cardDeck/cardShirt.jpg";
     }
 
-    let choiceCards: any[] = [];
+    let choiceCards: [] = [];
 
-    let clicks: any = document.querySelector(".second-page__card-deck");
+    let clicks = document.querySelector(".second-page__card-deck");
     if (choiceCards.length < 2) {
-        clicks!.addEventListener("click", function (event: any) {
-            if (event.target!.classList[0] === "card1") {
-                event.target.src = cardsEasy[0];
+        clicks!.addEventListener("click", function (event) {
+            if (
+                (event.target instanceof HTMLElement).classList[0] === "card1"
+            ) {
+                (event.target instanceof HTMLElement).src = cardsEasy[0];
                 choiceCards.push(event.target.src);
                 if (choiceCards.length < 2) {
                     return;
@@ -281,7 +289,7 @@ function renderBlocksSecondPageMedium() {
     const cardDeck = document.createElement("div");
     cardDeck.classList.add("second-page__card-deck");
 
-    function shuffle(array: any) {
+    function shuffle(array) {
         let currentIndex = array.length,
             randomIndex;
         while (currentIndex !== 0) {
@@ -298,7 +306,7 @@ function renderBlocksSecondPageMedium() {
 
     shuffle(cards);
 
-    let cardsEasy: any[] = [];
+    let cardsEasy = [];
     function addCard() {
         cardsEasy.push(
             cards[0],
@@ -394,7 +402,7 @@ function renderBlocksSecondPageMedium() {
 
     function cardsShirt() {
         let flipping1 = document.querySelector(".card1");
-        flipping1!.src = "./cardDeck/cardShirt.jpg";
+        flipping1.src = "./cardDeck/cardShirt.jpg";
 
         let flipping2 = document.querySelector(".card2");
         flipping2!.src = "./cardDeck/cardShirt.jpg";
@@ -430,11 +438,11 @@ function renderBlocksSecondPageMedium() {
         flipping12!.src = "./cardDeck/cardShirt.jpg";
     }
 
-    let choiceCards: any[] = [];
+    let choiceCards = [];
 
-    let clicks: any = document.querySelector(".second-page__card-deck");
+    let clicks = document.querySelector(".second-page__card-deck");
     if (choiceCards.length < 2) {
-        clicks.addEventListener("click", function (event: any) {
+        clicks.addEventListener("click", function (event) {
             if (event.target.classList[0] === "card1") {
                 event.target.src = cardsEasy[0];
                 choiceCards.push(event.target.src);
@@ -621,7 +629,7 @@ function renderBlocksSecondPageHard() {
     const cardDeck = document.createElement("div");
     cardDeck.classList.add("second-page__card-deck");
 
-    function shuffle(array: any) {
+    function shuffle(array) {
         let currentIndex = array.length,
             randomIndex;
         while (currentIndex !== 0) {
@@ -638,7 +646,7 @@ function renderBlocksSecondPageHard() {
 
     shuffle(cards);
 
-    let cardsEasy: any[] = [];
+    let cardsEasy = [];
     function addCard() {
         cardsEasy.push(
             cards[0],
@@ -830,11 +838,11 @@ function renderBlocksSecondPageHard() {
         flipping18!.src = "./cardDeck/cardShirt.jpg";
     }
 
-    let choiceCards: any[] = [];
+    let choiceCards = [];
 
-    let clicks: any = document.querySelector(".second-page__card-deck");
+    let clicks = document.querySelector(".second-page__card-deck");
     if (choiceCards.length < 2) {
-        clicks.addEventListener("click", function (event: any) {
+        clicks.addEventListener("click", function (event) {
             if (event.target.classList[0] === "card1") {
                 event.target.src = cardsEasy[0];
                 choiceCards.push(event.target.src);
