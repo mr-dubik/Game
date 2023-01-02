@@ -8,6 +8,6 @@
         "allowJs": true,
         "sourceMap": true,
         "moduleResolution": "node",
-        "strictNullChecks": false,
+        // "strictNullChecks": false,
     }
 }

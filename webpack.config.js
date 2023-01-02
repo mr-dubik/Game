@@ -8,11 +8,10 @@ const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = {
     entry: "./src/index.ts",
-    mode: isProduction ? "production" : "development",
+    mode: process.env.NODE_ENV === "production" ? "production" : "development",
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
-        clean: true,
     },
     module: {
         rules: [
@@ -22,7 +21,7 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.scss$/,
+                test: /\.s[ac]ss$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
             {
@@ -33,6 +32,15 @@ module.exports = {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: "asset/resource",
             },
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader",
+                exclude: /node_modules|\.d\.ts$/,
+            },
+            {
+                test: /\.d\.ts$/,
+                loader: "ignore-loader",
+            },
         ],
     },
     resolve: {
@@ -40,7 +48,10 @@ module.exports = {
     },
     plugins: [
         new CopyPlugin({
-            patterns: [{ from: "src/static", to: "static" }],
+            patterns: [
+                { from: "./cardDeck", to: "img" },
+                { from: "src/static", to: "static" },
+            ],
         }),
         new HtmlWebpackPlugin({
             template: "./index.html",

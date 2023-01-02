@@ -1,4 +1,4 @@
-const app = document.querySelector(".app");
+const app: any = document.querySelector(".app");
 function renderBlocksFirstPage() {
     const container = document.createElement("div");
     container.classList.add("first-page__container");
@@ -67,7 +67,7 @@ function renderBlocksFirstPage() {
     numberThree.appendChild(labelThree);
     container.appendChild(button);
 
-    const btn = document.querySelector(".first-page__button");
+    const btn: any = document.querySelector(".first-page__button");
     const radios = document.querySelectorAll(".radio");
     // const labels = document.querySelectorAll('label');
 
