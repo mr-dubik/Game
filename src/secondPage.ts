@@ -1,6 +1,6 @@
 import * as _ from "lodash";
 
-let cards = [
+let cards: String[] = [
     "./cardDeck/6_cross.jpg",
     "./cardDeck/6_heart.jpg",
     "./cardDeck/6_spades.jpg",
@@ -289,7 +289,7 @@ function renderBlocksSecondPageMedium() {
     const cardDeck = document.createElement("div");
     cardDeck.classList.add("second-page__card-deck");
 
-    function shuffle(array) {
+    function shuffle(array: []) {
         let currentIndex = array.length,
             randomIndex;
         while (currentIndex !== 0) {
@@ -629,7 +629,7 @@ function renderBlocksSecondPageHard() {
     const cardDeck = document.createElement("div");
     cardDeck.classList.add("second-page__card-deck");
 
-    function shuffle(array) {
+    function shuffle(array: []) {
         let currentIndex = array.length,
             randomIndex;
         while (currentIndex !== 0) {
@@ -646,7 +646,7 @@ function renderBlocksSecondPageHard() {
 
     shuffle(cards);
 
-    let cardsEasy = [];
+    let cardsEasy: [] = [];
     function addCard() {
         cardsEasy.push(
             cards[0],

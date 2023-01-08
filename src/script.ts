@@ -5,7 +5,7 @@ window.application = {
     screens: {},
     step: {},
     difficulty: {},
-    renderScreen: function (screenName: string) {
+    renderScreen: function (screenName) {
         if (!window.application.blocks[screenName]) {
             console.log("Такого экрана нет");
         } else {

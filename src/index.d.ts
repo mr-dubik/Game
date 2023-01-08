@@ -16,10 +16,10 @@ declare global {
             cardDeck: [];
         };
     }
-    interface HTMLImageElement {
-        card1: {
-            src: any,
-        }
+    interface Element {
+        src: string;
     }
-
+    interface HTMLImageElement {
+        
+    }
 }
