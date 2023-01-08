@@ -8,15 +8,18 @@ export {};
 
 declare global {
     interface Window {
-        application: any;
+        application: {
+            blocks: {};
+            screens: {};
+            step: {};
+            difficulty: {};
+            cardDeck: [];
+        };
     }
     interface Element {
-        checked: any;
-        src: any;
-        cardsEasy: any[];
+        src: string;
     }
-    interface HTMLLabelElement {}
-    interface EventTarget {
-        src: any;
+    interface HTMLImageElement {
+        
     }
 }

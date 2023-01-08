@@ -1,4 +1,6 @@
-const app: any = document.querySelector(".app");
+import * as _ from "lodash";
+
+const app = document.querySelector(".app");
 function renderBlocksFirstPage() {
     const container = document.createElement("div");
     container.classList.add("first-page__container");
@@ -53,7 +55,7 @@ function renderBlocksFirstPage() {
     button.classList.add("first-page__button");
     button.textContent = "Старт";
 
-    app.appendChild(container);
+    app!.appendChild(container);
     container.appendChild(title);
     container.appendChild(containerNumbers);
     containerNumbers.appendChild(numberOne);
@@ -67,11 +69,11 @@ function renderBlocksFirstPage() {
     numberThree.appendChild(labelThree);
     container.appendChild(button);
 
-    const btn: any = document.querySelector(".first-page__button");
+    const btn = document.querySelector(".first-page__button");
     const radios = document.querySelectorAll(".radio");
     // const labels = document.querySelectorAll('label');
 
-    btn.addEventListener("click", () => {
+    btn!.addEventListener("click", () => {
         if (radios[0].checked === true) {
             window.application.blocks.SecondPageEasy();
             window.application.difficulty["easyLevel"] = "easy";
